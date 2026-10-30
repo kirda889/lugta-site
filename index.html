@@ -23,7 +23,7 @@ h1{position:absolute;inset-inline-start:5vw;top:15vh;max-width:640px;font-size:c
 .glass i{background:var(--line);margin:22px 0}
 .who{display:flex;flex-direction:column;gap:2px;padding:24px 26px;border-radius:26px;transition:background .2s}.who:hover,.who:focus-visible{background:rgba(23,32,42,.035)}
 .who .k{font-weight:800;font-size:1.15rem}.who .d{font-size:.88rem;color:var(--soft)}
-.who .n{font-weight:800;font-size:3.1rem;line-height:1;margin-top:14px;font-variant-numeric:tabular-nums}.who .n bdi{direction:ltr;unicode-bidi:isolate}.inv .n{color:var(--good)}.res .n{color:var(--acc)}.who .n small{font-size:.36em;color:var(--soft);font-weight:700;margin-inline-start:6px}
+.who .n{font-weight:800;font-size:3.1rem;line-height:1;margin-top:14px;font-variant-numeric:tabular-nums}.who .n bdi{direction:ltr;unicode-bidi:isolate}.inv .n{color:var(--good)}.res .n{color:var(--acc)}.who .n small{font-size:.36em;color:var(--soft);font-weight:700;margin-inline-start:6px}.who .n.dash{color:var(--mute);font-weight:600;font-size:1.5rem!important;letter-spacing:.08em;opacity:.65;margin-top:18px}
 footer{position:absolute;bottom:0;inset-inline:0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:16px 5vw calc(16px + env(safe-area-inset-bottom));font-size:.82rem;color:var(--mute)}footer a{text-decoration:underline;text-underline-offset:3px}
 @media(max-width:700px){.map{background-image:var(--bgm);background-position:center 18%}
 .veil{background:linear-gradient(180deg,rgba(246,243,236,.92) 0 30%,rgba(246,243,236,0) 50%,rgba(246,243,236,.2) 62%,rgba(246,243,236,.95) 80%)}
@@ -35,12 +35,11 @@ footer{position:static;flex-direction:column;gap:0;padding:4px 18px calc(12px + 
 <body><div class="map" id="map" aria-hidden="true" style="--bgd:url(/assets/home-jeddah.jpg);--bgm:url(/assets/home-jeddah-m.jpg)"></div><div class="veil" aria-hidden="true"></div>
 <header><a class="brand" href="/"><img src="/icon-192.png" alt="" width="40" height="40">لقطة</a><div class="cities" role="group" aria-label="المدينة"><button type="button" data-c="jeddah" aria-pressed="true">جدة</button><button type="button" data-c="riyadh" aria-pressed="false">الرياض</button></div></header>
 <main><h1>أعلى عائد للمستثمر،<br>وأنسب حي للساكن</h1>
-<div class="glass"><a class="who inv" id="goInv" href="/jeddah/?who=inv"><span class="k">أنا مستثمر</span><span class="d">أعلى عائد متوقع الآن</span><span class="n"><bdi id="vInv">7.4%</bdi></span></a><i aria-hidden="true"></i>
-<a class="who res" id="goRes" href="/jeddah/?who=res"><span class="k">أنا ساكن</span><span class="d">أنسب حي لأسرة بالمدارس</span><span class="n"><bdi id="vRes">90</bdi><small>من 100</small></span></a></div></main>
+<div class="glass"><a class="who inv" id="goInv" href="/jeddah/?who=inv"><span class="k">أنا مستثمر</span><span class="d">أعلى عائد متوقع الآن</span><span class="n dash" aria-label="غير محدد">– –</span></a><i aria-hidden="true"></i>
+<a class="who res" id="goRes" href="/jeddah/?who=res"><span class="k">أنا ساكن</span><span class="d">أنسب حي لأسرة بالمدارس</span><span class="n dash" aria-label="غير محدد">– –</span></a></div></main>
 <footer><span>المصادر: منصة إيجار، وصفقات وزارة العدل، وسجل وافي · تتحدث كل أسبوع</span><span>© لقطة · <a href="/jeddah/#method">على ماذا بنينا الأرقام</a> · <a href="/jeddah/#privacy">الخصوصية</a> · <a href="/jeddah/#terms">الشروط</a> · <a href="mailto:contact@lagtamap.com">contact@lagtamap.com</a></span></footer>
 <script>(function(){const D={"jeddah": {"inv": "7.4%", "res": "90", "bg": "/assets/home-jeddah.jpg", "bgm": "/assets/home-jeddah-m.jpg"}, "riyadh": {"inv": "7.6%", "res": "86", "bg": "/assets/home-riyadh.jpg", "bgm": "/assets/home-riyadh-m.jpg"}};const m=document.getElementById('map');
 document.querySelectorAll('.cities button').forEach(b=>b.onclick=()=>{const c=b.dataset.c,d=D[c];if(!d)return;document.querySelectorAll('.cities button').forEach(x=>x.setAttribute('aria-pressed',x===b));
 m.style.setProperty('--bgd',d.bg?'url('+d.bg+')':'none');m.style.setProperty('--bgm',(d.bgm||d.bg)?'url('+(d.bgm||d.bg)+')':'none');
-document.getElementById('vInv').textContent=d.inv;document.getElementById('vRes').textContent=d.res;
 document.getElementById('goInv').href='/'+c+'/?who=inv';document.getElementById('goRes').href='/'+c+'/?who=res';});})();</script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "9482cb2952e74f16acbf95dfe85ea67d"}'></script></body></html>
